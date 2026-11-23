@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evan</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/" } }
+</script>
+</head>
+<body>
+<header id="header">
+  <div id="drag"></div>
+  <canvas id="head"></canvas>
+  <div id="who">
+    <div id="name">Evan</div>
+    <div id="status">online</div>
+  </div>
+  <select id="model" title="Model"></select>
+  <button id="new-chat" type="button" title="New chat" aria-label="New chat">
+    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</header>
+
+<main id="log" aria-live="polite"></main>
+
+<form id="composer" autocomplete="off">
+  <input id="input" placeholder="Text Evan" maxlength="500" disabled>
+  <button id="send" type="submit" disabled aria-label="Send">
+    <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</form>
+
+<section id="setup" hidden>
+  <div class="card">
+    <h2 id="setup-title">Evan couldn't wake up</h2>
+    <p id="setup-text"></p>
+    <input id="setup-name" type="text" placeholder="Your name" maxlength="24" autocomplete="given-name" hidden>
+    <input id="setup-input" type="password" placeholder="Passcode" autocomplete="off" hidden>
+    <div class="row">
+      <button id="setup-retry" class="primary">Try again</button>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="head.js"></script>
+<script type="module" src="chat.js"></script>
+</body>
+</html>
